@@ -22,9 +22,9 @@ The goal of the project is to ensure these commands use the same syntax for cons
 
 #### Arguments that --format takes - git log && git for-each-ref
 
-When the --format option is used with the commands git log and git for-each-ref, it returns diffrent information.
+When the --format option is used with the commands git log and git for-each-ref, the results are different.
 
-The --format option is used with git log, it takes as arguments one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string>. For example this:
+When --format option is used with git log, it takes as arguments one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string>. For example this:
 
 	git log --format=short
 
@@ -61,17 +61,20 @@ Returns:
 	short
 	short
 
+Therefore there should be away for the syntax for git for-each-ref --format=short returning same results as git log --format=short
 
-and using --format with git log given a string value just replaces the log values with the string for example this:
+**Difference Two :** using --format with git log given a string value just replaces the log values with the string for example this:
 
 	git log  --format='%(Author:short)'
 
-Returns this times the number of available commits:
+Returns this times the number of available commits which is not as intended.
 
 	%(Author:short)
 	%(Author:short)
 
-**Difference Two :** It is also evident that these two commands return different output named with different parameters in some cases. Needs confirmation on what is called what in each case. The commit message is named subject for git for-each-ref but may not be so for git log.
+Therefore there should be away for the syntax git log  --format='%(Author:short)' returning same results as git for-each-ref --format='%(Author:short)'
+
+**Difference Three :** It is also evident that these two commands return different output named with different parameters in some cases. Needs confirmation on what is called what in each case. The commit message is named subject for git for-each-ref but may not be so for git log.
 
 ### Proposed Implementation Road Map
 

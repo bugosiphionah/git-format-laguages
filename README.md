@@ -1,6 +1,6 @@
-## Outreachy - Git format-languages - Project Tracker
+## Outreachy - Git format-languages - Application Tracker
 
-I will track my progress on outreachy Application tasks for the project on here :)
+I will track my progress on outreachy Application tasks for the project here :)
 
 
 ## Intern Info
@@ -8,12 +8,12 @@ I will track my progress on outreachy Application tasks for the project on here 
 + **Name :** Phionah Bugosi <br />
 + **Email :** bugosip@gmail.com <br />
 + **IRC Nick :** Phionah <br />
-+ **Github :**[Phionah Bugosi](https://github.com/bugosiphionah)
++ **Github :** [Phionah Bugosi](https://github.com/bugosiphionah)
 
 
 ## Project Links
 
-+ [Proposal](https://github.com/bugosiphionah/git-format-laguages/proposal.md)
++ [Proposal](https://github.com/bugosiphionah/git-format-laguages/blob/master/proposal.md)
 
 ## Project Source Code
 
@@ -21,8 +21,8 @@ I will track my progress on outreachy Application tasks for the project on here 
 
 ### Current Tasks in Progress
 
-+ Take a peek at the code for each, which you'll find in ref-filter.c
-  and pretty.c. Think about how the systems differ, and how they're
++ Take a peek at the code for  --format commands of "git for-each-ref" and "git
+  log"., which you'll find in ref-filter.c and pretty.c. Think about how the systems differ, and how they're
   the same. What challenges would you expect in unifying them?
 
 ### Finished Tasks
