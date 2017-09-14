@@ -61,7 +61,7 @@ Returns:
 	short
 	short
 
-Therefore there should be away for the syntax for git for-each-ref --format=short returning same results as git log --format=short
+Therefore there should be away for the syntax for git for-each-ref --format=short returning same results as git log --format=short returning same output.
 
 **Difference Two :** using --format with git log given a string value just replaces the log values with the string for example this:
 
@@ -72,26 +72,26 @@ Returns this times the number of available commits which is not as intended.
 	%(Author:short)
 	%(Author:short)
 
-Therefore there should be away for the syntax git log  --format='%(Author:short)' returning same results as git for-each-ref --format='%(Author:short)'
+Therefore there should be away for the syntax git log  --format='%(Author:short)' returning same results as git for-each-ref --format='%(Author:short)' returning same output.
 
 **Difference Three :** It is also evident that these two commands return different output named with different parameters in some cases. Needs confirmation on what is called what in each case. The commit message is named subject for git for-each-ref but may not be so for git log.
 
 ### Proposed Implementation Road Map
 
-1. The idea is to ensure both commands take as parameters the --pretty format arguments that is to say one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string> and return output fomatted accordingly with expected output. Therefore the syntaxes:
+1.The idea is to ensure both commands take as parameters the --pretty format arguments that is to say one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string> and return output fomatted accordingly with expected output. Therefore the syntaxes:
 
 	git log --format=short
 	git for-each-ref --format=short
 
-  Should all be accepted and should return required output.
+Should all be accepted and should return required output.
 
 
-2. Both commands should also be able to take a string as --format argument and interprete the variables as accepted in the string. Therefore as an example this syntax:
+2.Both commands should also be able to take a string as --format argument and interprete the variables as accepted in the string. Therefore as an example this syntax:
 
 	git log  --format='%(subject)'
 	git for-each-ref --format='%(subject)'
 
-  Should be acceptable for both commands and should return same data akin to this:
+Should be acceptable for both commands and should return same data akin to this:
 
 	Sync with maint
 	Sync with maint
@@ -99,9 +99,9 @@ Therefore there should be away for the syntax git log  --format='%(Author:short)
 	Sync with maint
 	Sync with master
 
-  Depending on your project commits, the output may be different to mine but the idea is both commands return the same output.
+Depending on your project commits, the output may be different to mine but the idea is both commands return the same output.
 
-3. git cat-file when used with the --batch-check option should also take --pretty format arguments and string arguments returning output that is formated in the same way git log && and git for-each-ref does return output.
+3.git cat-file when used with the --batch-check option should also take --pretty format arguments and string arguments returning output that is formated in the same way git log && and git for-each-ref does return output.
 
 ### Scope
 
@@ -139,11 +139,12 @@ Tentatively this is the work plan with details on how long and when the project 
 + Write wrapp up blog
 
 ### Challenges
-+ I need to dig around the code base to know how the pieces fit together before ai can know how to actually unify the syntax for these commands
 
-Conclusion
++ I need to dig around the code base to know how the pieces fit together before  I can know how to actually unify the syntax for these commands. This is what I will be doing for the next period I guess.
 
-In this document, I give a road map based on what I currently understand about the project in question. I stand to be corrected and welcome suggestions. You can open a pull request to state any information you think I have missed out or need to know.
+### Conclusion
+
+In this document, I give a road map based on what I currently understand about the project in question. I stand to be corrected and welcome suggestions. You can open a pull request or issue to state any information you think I have missed out or need to know.
 
  
 
