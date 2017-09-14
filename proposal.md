@@ -83,7 +83,7 @@ Therefore there should be away for the syntax git log  --format='%(Author:short)
 	git log --format=short
 	git for-each-ref --format=short
 
-Should all be accepted and should return required output.
+  Should all be accepted and should return required output.
 
 
 2. Both commands should also be able to take a string as --format argument and interprete the variables as accepted in the string. Therefore as an example this syntax:
@@ -91,7 +91,7 @@ Should all be accepted and should return required output.
 	git log  --format='%(subject)'
 	git for-each-ref --format='%(subject)'
 
-Should be acceptable for both commands and should return same data akin to this:
+  Should be acceptable for both commands and should return same data akin to this:
 
 	Sync with maint
 	Sync with maint
@@ -99,7 +99,7 @@ Should be acceptable for both commands and should return same data akin to this:
 	Sync with maint
 	Sync with master
 
-Depending on your project commits, the output may be different to mine but the idea is both commands return the same output.
+  Depending on your project commits, the output may be different to mine but the idea is both commands return the same output.
 
 3. git cat-file when used with the --batch-check option should also take --pretty format arguments and string arguments returning output that is formated in the same way git log && and git for-each-ref does return output.
 
@@ -116,14 +116,14 @@ The unification process shall affect three git commands:
 
 Tentatively this is the work plan with details on how long and when the project broken down in small tasks shall be executed.
 
-05 - 12 - 2017  to 05 - 01 - 2018
+**05 - 12 - 2017  to 05 - 01 - 2018**
 
 + Implement unification for the git log command i.e ensure string argument works like in git for-each-ref
 + Review for this milestone
 + Work on reviews
 + Write blog
 
-06 - 01 - 2018  to 06 - 02 - 2018
+**06 - 01 - 2018  to 06 - 02 - 2018**
 
 + Implement unification for the git for-each-ref command i.e ensure --format takes --pretty format arguments (short, full etc)
 + Review for this milestone
@@ -131,7 +131,7 @@ Tentatively this is the work plan with details on how long and when the project 
 + Work on reviews
 + Write blog
 
-06 - 12 - 2017  to 05 - 01 - 2018
+**06 - 12 - 2017  to 05 - 01 - 2018**
 
 + Implement unification for the git cat-file command i.e ensure --batch-check takes --pretty format arguments (short, full etc)
 + Review for this milestone
