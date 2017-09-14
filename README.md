@@ -1,8 +1,8 @@
 ## Outreachy - Git format-languages Project Proposal
 
-**Author :** Phionah Bugosi
-**Email :** bugosip@gmail.com
-**IRC Nick :** Phionah
+**Author :** Phionah Bugosi <br />
+**Email :** bugosip@gmail.com<br />
+**IRC Nick :** Phionah<br />
 
 ### Background to the project
 
@@ -92,6 +92,10 @@ Depending on your project commits, the output may be different to mine but the i
 
 The unification process shall affect three git commands:
 
++ git log 
++ git for-each-ref
++ git cat-file --batch-check
+
 
 ### Time Line
 
@@ -121,9 +125,7 @@ Tentatively this is the work plan with details on how long and when the project 
 
 Conclusion
 
-+ git log 
-+ git for-each-ref
-+ git cat-file --batch-check 
+ 
 
 
 
