@@ -123,7 +123,7 @@ Tentatively this is the work plan with details on how long and when the project 
 + Work on reviews
 + Write blog
 
-**06 - 01 - 2018  to 06 - 02 - 2018**
+**06 - 01 - 2018  to 05 - 02 - 2018**
 
 + Implement unification for the git for-each-ref command i.e ensure --format takes --pretty format arguments (short, full etc)
 + Review for this milestone
@@ -131,7 +131,7 @@ Tentatively this is the work plan with details on how long and when the project 
 + Work on reviews
 + Write blog
 
-**06 - 12 - 2017  to 05 - 01 - 2018**
+**06 - 02 - 2017  to 05 - 03 - 2018**
 
 + Implement unification for the git cat-file command i.e ensure --batch-check takes --pretty format arguments (short, full etc)
 + Review for this milestone
