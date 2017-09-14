@@ -1,139 +1,31 @@
-## Outreachy - Git format-languages Project Proposal
+## Outreachy - Git format-languages - Project Tracker
 
-**Author :** Phionah Bugosi <br />
-**Email :** bugosip@gmail.com<br />
-**IRC Nick :** Phionah<br />
-
-### Background to the project
-
-As defined by [wikipedia](https://en.wikipedia.org/wiki/Git), Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source code management in software development,[8] but it can be used to keep track of changes in any set of files. As a distributed revision control system it is aimed at speed,data integrity, and support for distributed, non-linear workflows.
-
-Most Git commands take a --format option to allow you to specify a custom output format. An example is these commands.
-
-+ git log that shows the output of commit logs
-+ git for-each-ref that shows the output information on each ref and commits.
-+ git cat-file --batch-check that gives content or type and size information for repository objects
-
-git log and git for-each-ref take the --format as an option but using different syntax to return the required information in each scenario. git cat-file takes the --batch-check option to return the required.
-
-The goal of the project is to ensure these commands use the same syntax for consistency and in accepted cases same items. To appreciate their polaritis, Let me discuss the differences thst exist with these commands.
-
-### Existing differences in the commands
-
-#### Arguments that --format takes
-
-When the --format option is used with the commands git log and git for-each-ref, it returns diffrent information.
-
-The --format option is used with git log, it takes as arguments one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string>. For example this:
-
-	git log --format=short
-
-Returns relatively summarised log information.
-
-	Merge: c739cd1 94c9fd2
-	Author: Junio C Hamano <gitster@pobox.com>
-
-	    Sync with maint
-
-It takes a --pretty format and returns relevant output.
+I will track my progress on outreachy Application tasks for the project on here :)
 
 
-When using --format option  with git for-each-ref, we are allowed to give a string as argument. For example this:
+## Intern Info
 
-	git for-each-ref --format='%(subject)'
-
-Returns information regarding reference name and commit messages.
-
-	master Sync with maint
-	origin/HEAD Sync with maint
-	origin/maint RelNotes: further fixes for 2.14.2 from the master front
-	origin/master Sync with maint
-	origin/next Sync with master
-
-It intepretes the parameters in the %(). The parameters allowed are the accepted ref and commit information parameters like refname and subject
-
-**Difference one :** When using --format with git for-each-ref, the syntax does not allow using the --pretty format arguments like short, medium etc and using --format with git log given a string value just replaces the log values with the string for example this:
-
-	git log  --format='%(Author:short)'
-
-Returns this times the number of available commits:
-
-	%(Author:short)
-	%(Author:short)
-
-**Difference Two :** It is also evident that these two commands return different output named with different parameters in some cases. Needs confirmation on what is called what in each case. The commit message is named subject for git for-each-ref but may not be so for git log.
-
-### Proposed Syntax Unification Road Map
-
-The idea is to ensure both commands take as parameters the --pretty format arguments that is to say one of oneline, short, medium, full, fuller, email, raw, format:<string> and tformat:<string> and return output fomatted accordingly. Therefore the syntaxes:
-
-	git log --format=short
-	git for-each-ref --format=short
-
-Should all be accepted. The format should be the same with afew differences of the returned data.
++ **Name :** Phionah Bugosi <br />
++ **Email :** bugosip@gmail.com <br />
++ **IRC Nick :** Phionah <br />
++ **Github :**[Phionah Bugosi](https://github.com/bugosiphionah)
 
 
-Both commands should also be able to take a string as --format argument and interprete the variables as accepted in the string. Therefore as an example this syntax:
+## Project Links
 
-	git log  --format='%(subject)'
-	git for-each-ref --format='%(subject)'
++ [Proposal](https://github.com/bugosiphionah/git-format-laguages/proposal.md)
 
-Should be acceptable for both commands and should return same data akin to this:
+## Project Source Code
 
-	Sync with maint
-	Sync with maint
-	RelNotes: further fixes for 2.14.2 from the master front
-	Sync with maint
-	Sync with master
++ [git](https://github.com/bugosiphionah/git)
 
-Depending on your project commits, the output may be different to mine but the idea is both commands return the same output.
+### Current Tasks in Progress
 
-### Scope
++ Take a peek at the code for each, which you'll find in ref-filter.c
+  and pretty.c. Think about how the systems differ, and how they're
+  the same. What challenges would you expect in unifying them?
 
-The unification process shall affect three git commands:
+### Finished Tasks
 
-+ git log 
-+ git for-each-ref
-+ git cat-file --batch-check
-
-
-### Time Line
-
-Tentatively this is the work plan with details on how long and when the project broken down in small tasks shall be executed.
-
-05 - 12 - 2017  to 05 - 01 - 2018
-
-+ Implement unification for the git log command i.e ensure string argument works like in git for-each-ref
-+ Review for this milestone
-+ Work on reviews
-+ Write blog
-
-06 - 01 - 2018  to 06 - 02 - 2018
-
-+ Implement unification for the git for-each-ref command i.e ensure --format takes --pretty format arguments (short, full etc)
-+ Review for this milestone
-+ Work on reviews
-+ Work on reviews
-+ Write blog
-
-06 - 12 - 2017  to 05 - 01 - 2018
-
-+ Implement unification for the git cat-file command i.e ensure --batch-check takes --pretty format arguments (short, full etc)
-+ Review for this milestone
-+ Work on reviews
-+ Write wrapp up blog
-
-Conclusion
-
- 
-
-
-
-
-
-
-
-
-
-
+### Related Pull Requests
 
